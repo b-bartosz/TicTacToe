@@ -1,0 +1,296 @@
+    @font-face {
+        font-family: "StarJedi";
+        src: url("/fonts/StarJedi.woff") format("woff"),
+        url("/fonts/StarJedi.woff2") format("woff2"),
+        url("/fonts/StarJedi.ttf") format("truetype");
+    }
+
+      html {
+        height: 100%;
+      }
+
+      body { 
+        font-family: Tahoma, Geneva, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center; 
+        background: url(/images/tatooine-sunset-b.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        min-width: 300px;
+        height: 100%;        
+      }
+
+      .container {
+        height: 480px;
+      }
+
+      @keyframes goUp {
+        0% {height: 480px;}
+        100% {height: 250px;}
+      }
+
+      .up {
+        animation-name: goUp;
+        animation-delay: 0.9s;
+        animation-duration: 0.9s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
+
+      .header {
+        width: 200px;
+        -webkit-user-select: none;  
+        -moz-user-select: none;    
+        -ms-user-select: none;      
+        user-select: none;
+        margin: 0 50% 0 50%;
+        position: absolute;
+        transform: translate(-100px, 90px);
+      }
+
+      .header p {
+        font-family: "StarJedi";
+        margin: -15px;
+      }
+
+      .bigFont {
+        font-size: 80px;
+      }
+
+      .smallFont {
+        font-size: 40px;
+      }
+
+      @keyframes fadeItIn {
+        0% {opacity: 0; transform: translate(-600px, 0px); font-size: 40px;}
+        100% {opacity: 1; transform: translate(0px, 0px); font-size: 40px;}
+      }
+
+      @keyframes fadeItOut {
+        0% {opacity: 1; transform: translate(0px, 0px);}
+        100% {opacity: 0; transform: translate(600px, 0px);}
+      }
+
+      .moveHeader p {
+        animation-name: fadeItOut, fadeItIn;
+        animation-duration: 0.5s, 0.5s;
+        animation-delay: 0s, 0.9s;
+        animation-timing-function: ease-in, ease-out;
+        animation-fill-mode: forwards, forwards;
+      }
+      .moveHeader p:nth-child(2) {animation-delay: 0.2s, 1.1s;}
+      .moveHeader p:last-child {animation-delay: 0.4s, 1.3s;}
+
+      .oneLineHeader {
+        animation-name: oneLineHeader;
+        animation-delay: 0.9s;
+        animation-duration: 0.1s;
+        animation-fill-mode: forwards;
+      }
+
+      #content {
+        min-height: 10px;
+      }
+
+      #vsText {
+        margin: 0 50px 0 50px;
+      }
+
+      #nameField {
+        border: none;
+        background-color: rgba(255, 255, 255, 0.65);
+        border-radius: 5px 0 0 5px;
+        width: 130px;
+      }
+
+      #nameField[type=text] {
+        padding-left: 10px;
+      }
+
+      #nameButton {
+        border: none;
+        background-color: #6d4c45;
+        border-radius: 0 5px 5px 0;
+        margin-left: -5px;
+        transition: background-color 0.5s;
+        color: white;
+      }
+
+      #nameButton:hover {
+        background-color: #2196f3;
+      }
+
+      @keyframes slide-up {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      table {
+        margin: 20px auto;
+        border-spacing: 10px;
+        font-family: "StarJedi";
+        font-size: 44px;
+        opacity: 0;
+        animation: slide-up 0.6s ease forwards;
+        animation-delay: 1.2s;
+      }
+
+      td {
+        width: 70px;
+        height: 70px;
+        border: transparent;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        filter: drop-shadow(0px 0px 5px #0000008e);
+        transition: background-color 0.5s;     
+        -webkit-user-select: none;  
+        -moz-user-select: none;    
+        -ms-user-select: none;      
+        user-select: none;   
+      }
+
+      td span {
+          font-size: larger;
+          position: absolute;
+          transform: translate(-26px, -37px);
+      }
+
+      .tdActive:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      
+      #logos {
+        font-family: "StarJedi";
+      }
+
+      #logos span {
+        margin: 50px;
+        font-size: 44px;
+      }
+
+      #names {
+        height: 90px;        
+        font-size: 20px;
+        opacity: 0;
+        animation: slide-up 0.6s ease forwards;
+        animation-delay: 1s;
+      }
+
+      #names div div {
+        display: inline-block;      
+      }
+
+      #names div:nth-child(2) div {
+        height: 32px;
+        border-bottom: solid 1px white;    
+      }
+
+      #names .sign {
+        font-family: "StarJedi";  
+        width: 21px; 
+        vertical-align: top;
+      }
+
+      #names div .name {
+        width: 176px;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      #names div .score {
+        width: 22px;
+        text-align: right;
+      }
+
+      .nameInfo{
+        font-size: 12px;
+        width: 188px;
+        text-align: left;
+        padding-left: 31px;
+      }
+
+      .scoreInfo {
+        font-size: 12px;
+      }
+
+      .winner, .winner:hover {
+        background-color: rgb(33, 150, 243);
+      }
+
+      #winnerText {
+        margin-right: 20px;
+      }
+
+      #currentP {
+        width: 250px;
+        margin: 0 auto;
+        opacity: 0;
+        animation: slide-up 0.6s ease forwards;
+        animation-delay: 1.4s;
+      }
+
+      #currentP div {
+        display: inline-block;
+      }
+
+      .restartButton {
+        border: transparent;
+        border-radius: 5px;
+        background-color: rgb(255, 166, 113);
+        filter: drop-shadow(0px 0px 5px #0000008e);
+        transition: background-color 0.5s;
+      }
+
+      .restartButton:hover {
+        background-color: rgb(233, 130, 99);
+      }
+
+      .restartButtonDisabled {
+        border: transparent;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        color: white;
+        filter: drop-shadow(0px 0px 5px #0000008e);
+        transition: none;
+        -webkit-user-select: none;  
+        -moz-user-select: none;    
+        -ms-user-select: none;      
+        user-select: none;
+      }
+
+      @keyframes rotate {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(-360deg);}
+      }
+
+      .rotationOn {
+        display: inline-block;
+        width: 12px;
+        animation-name: rotate;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+      }
+
+      @keyframes vanish {
+        from {opacity: 1;}
+        to {opacity: 0.4;}
+      }
+
+      #extraInfo {
+        animation-name: vanish;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-direction: alternate;
+      }
